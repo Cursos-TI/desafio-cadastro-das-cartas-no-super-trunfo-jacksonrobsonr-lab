@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main() {
 
         char estado_carta1, estado_carta2;              //Estado: Uma letra de 'A' a 'H' (representando um dos oito estados). Tipo: char

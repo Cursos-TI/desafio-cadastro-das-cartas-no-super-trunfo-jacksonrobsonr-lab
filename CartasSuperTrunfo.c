@@ -3,13 +3,17 @@
 
 int main() {
 
-        char estado_carta1, estado_carta2;              //Estado: Uma letra de 'A' a 'H' (representando um dos oito estados). Tipo: char
-        int codigo_carta1, codigo_carta2;               //Código da Carta: A letra do estado seguida de um número de 01 a 04 (ex: A01, B03). Tipo: char[] (um array de caracteres, ou string)
-        char cidade_carta1[20], cidade_carta2[20];      //Nome da Cidade: O nome da cidade. Tipo: char[] (string)
-        int n_habitantes_carta1, n_habitantes_carta2;   //População: O número de habitantes da cidade. Tipo: int
-        float area_carta1, area_carta2;                 //Área (em km²): A área da cidade em quilômetros quadrados. Tipo: float
-        float pib_carta1, pib_carta2;                   //PIB: O Produto Interno Bruto da cidade. Tipo: float
-        int turismo_carta1, turismo_carta2;             //Número de Pontos Turísticos: A quantidade de pontos turísticos na cidade. Tipo: int
+        char estado_carta1, estado_carta2;                  //Estado: Uma letra de 'A' a 'H' (representando um dos oito estados). Tipo: char
+        int codigo_carta1, codigo_carta2;                   //Código da Carta: A letra do estado seguida de um número de 01 a 04 (ex: A01, B03). Tipo: char[] (um array de caracteres, ou string)
+        char cidade_carta1[20], cidade_carta2[20];          //Nome da Cidade: O nome da cidade. Tipo: char[] (string)
+        int n_habitantes_carta1, n_habitantes_carta2;       //População: O número de habitantes da cidade. Tipo: int
+        float area_carta1, area_carta2;                     //Área (em km²): A área da cidade em quilômetros quadrados. Tipo: float
+        float pib_carta1, pib_carta2;                       //PIB: O Produto Interno Bruto da cidade. Tipo: float
+        int turismo_carta1, turismo_carta2;                 //Número de Pontos Turísticos: A quantidade de pontos turísticos na cidade. Tipo: int
+        float densidade_carta1, densidade_carta2;           //Densidade Populacional
+        float pib_perc_carta1, pib_perc_carta2;
+
+
 
 //entrada de dados da carta 1
 printf("Insira as informações da carta 1\n");
@@ -49,6 +53,13 @@ printf("________________________________\n");
         printf("Insira quantidade de pontos turísticos na cidade: ");
         scanf(" %d", &turismo_carta2);
 
+        
+    densidade_carta1 = n_habitantes_carta1 / area_carta1;        //Calcular a Densidade Populacional da carta 1
+    densidade_carta2 = n_habitantes_carta2 / area_carta2;        //Calcular a Densidade Populacional da carta 2
+    pib_perc_carta1 = pib_carta1 / n_habitantes_carta1;         //Calcular o PIB per Capita da carta 1
+    pib_perc_carta2 = pib_carta2 / n_habitantes_carta2;         //Calcular o PIB per Capita da carta 2
+
+
 //saída carta 1
 printf("Carta 1\n");
 
@@ -58,7 +69,9 @@ printf("Carta 1\n");
         printf("População: %d\n", n_habitantes_carta1);
         printf("Área: %.2f km²\n", area_carta1);
         printf("PIB: %.2f bilhões de reais\n", pib_carta1);
-        printf("Número de Pontos Turísticos: %d\n\n", turismo_carta1);
+        printf("Número de Pontos Turísticos: %d\n", turismo_carta1);
+        printf("Densidade Populacional: %.2f hab/km²\n", densidade_carta1);
+        printf("PIB per Capita: %.2f reais\n\n", pib_perc_carta1);
 
 //saída carta 2
 printf("Carta 2\n");
@@ -70,5 +83,7 @@ printf("Carta 2\n");
         printf("Área: %.2f km²\n", area_carta2);
         printf("PIB: %.2f bilhões de reais\n", pib_carta2);
         printf("Número de Pontos Turísticos: %d\n", turismo_carta2);
+        printf("Densidade Populacional: %.2f\n", densidade_carta2);
+        printf("PIB per Capita: %.2f reais\n\n", pib_perc_carta2);
 
 }
